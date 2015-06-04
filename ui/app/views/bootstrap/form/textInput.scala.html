@@ -1,0 +1,9 @@
+@(
+  label: String,
+  field: play.api.data.Field,
+  inputType: String = "text"
+)
+
+@views.html.bootstrap.form.formGroup(label, field) {
+  <input type="@inputType" class="form-control input" id="@field.id" name="@field.id" value="@field.value">
+}

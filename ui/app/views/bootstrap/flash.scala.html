@@ -1,0 +1,17 @@
+@(flash: Flash)
+
+@if(flash.get("success").isDefined) {
+  <div class="alert alert-success" role="alert">@flash("success")</div>
+} else {
+  @if(flash.get("info").isDefined) {
+    <div class="alert alert-info" role="alert">@flash("info")</div>
+  } else {
+    @if(flash.get("warning").isDefined) {
+      <div class="alert alert-warning" role="alert">@flash("warning")</div>
+    } else {
+      @if(flash.get("danger").isDefined) {
+        <div class="alert alert-danger" role="alert">@flash("danger")</div>
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@(
+  label: String,
+  field: play.api.data.Field
+)(
+  input: Html
+)
+
+<div class="form-group @if(field.hasErrors){ has-error }">
+  <label for="@field.id" class="control-label">@label</label>
+  @input
+</div>

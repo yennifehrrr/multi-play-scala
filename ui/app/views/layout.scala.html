@@ -1,0 +1,62 @@
+@(title: String, requestContext: controllers.RequestContext)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>@title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="@routes.Assets.at("lib/bootstrap/css/bootstrap.css")">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")">
+
+    <script>
+      var require = {
+        baseUrl: '/assets/javascripts',
+        paths: {
+          jquery: '/assets/lib/jquery/jquery',
+          bootstrap: '/assets/lib/bootstrap/js/bootstrap',
+          underscore: '/assets/lib/underscorejs/underscore'
+        },
+        shim: {
+          'bootstrap': {
+            deps: ['jquery']
+          }
+        }
+      };
+    </script>
+
+    <script type="text/javascript" src="@routes.Assets.at("lib/requirejs/require.js")"></script>
+
+    <script>
+      require(['bootstrap'], function(Bootstrap) {});
+    </script>
+  </head>
+
+  <nav class="navbar navbar-default app-navbar navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".app-navbar .navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    @bootstrap.flash(requestContext.flash)
+
+    @content
+  </div>
+
+</html>

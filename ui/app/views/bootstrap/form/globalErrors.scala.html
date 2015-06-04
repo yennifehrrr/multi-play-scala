@@ -1,0 +1,5 @@
+@(form: Form[_])
+
+@for(globalError <- form.globalErrors) {
+  <div class="alert alert-danger" role="alert">@globalError.message</div>
+}

@@ -1,0 +1,21 @@
+.page-header a {
+  margin-right: 10px;
+}
+
+.table-form {
+  margin-bottom: 20px;
+}
+
+.table-action {
+  text-align: center;
+}
+
+.form-notes {
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+}
+
+.resolve-audit-account-search-form {
+  margin-bottom: 20px;
+}
